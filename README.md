@@ -1,175 +1,274 @@
-# Customer-Shopping-Behavior-Analysis-using-Python-SQL-Power-BI
-Power BI dashboard project analyzing customer shopping behavior, purchasing patterns, revenue, product categories, customer demographics, subscriptions, and payment preferences using interactive visualizations.
+End-to-end Customer Shopping Behavior Analysis using Python, SQL, and Power BI. Includes data cleaning, exploratory data analysis, SQL querying, business insights, and interactive dashboard development.
 
-# Customer Shopping Behavior Analysis | Power BI Dashboard
+# Customer Shopping Behavior Analysis
+### End-to-End Data Analytics Project Using Python, PostgreSQL & Power BI
 
-## Project Overview
+**Prepared By:** Noor Mohammad  
+**Project Domain:** Retail & E-commerce  
+**Tools & Technologies:** Python (Pandas), PostgreSQL, Microsoft Power BI
 
-The **Customer Shopping Behavior Analysis** project is an interactive data visualization project developed using Microsoft Power BI.
+---
 
-The objective of this project is to analyze customer shopping behavior, purchasing patterns, revenue distribution, product preferences, and customer demographics through interactive dashboards and visual reports.
+## 1. Executive Summary
 
-The dashboard provides insights into different aspects of customer purchasing activities, including product categories, customer age groups, gender distribution, subscription status, shipping preferences, and payment methods.
+Customer Shopping Behavior Analysis is an end-to-end data analytics project focused on understanding customer purchasing patterns, analyzing revenue performance, and identifying meaningful business insights from shopping transaction data.
 
-This project demonstrates practical skills in data analysis, data visualization, dashboard development, and business intelligence.
+The project follows a complete data analytics workflow, beginning with data cleaning and preparation using Python (Pandas), followed by SQL-based business analysis using PostgreSQL, and finally transforming analytical findings into an interactive Power BI dashboard.
 
-## Project Objectives
+The analysis focuses on customer demographics, product performance, purchasing behaviour, discount usage, subscription patterns, shipping preferences, and revenue distribution.
 
-- Analyze customer shopping behavior and purchasing patterns.
-- Understand revenue distribution across different product categories.
-- Examine customer demographics, including age groups and gender.
-- Identify popular products based on revenue.
-- Analyze customer subscription status.
-- Explore shipping preferences and payment methods.
-- Present key business metrics through interactive visualizations.
-- Develop an interactive dashboard to support data-driven decision-making.
+The final dashboard provides a consolidated view of key business performance indicators and helps identify trends that can support better business decisions.
 
-## Tools & Technologies
+## 2. Project Objectives
 
-| Tool | Purpose |
+- Clean and prepare raw shopping data using Python.
+- Perform exploratory data analysis and feature engineering.
+- Store and analyze structured data using PostgreSQL.
+- Answer 10 important business questions using SQL queries.
+- Analyze customer purchasing and spending patterns.
+- Identify high-performing products and categories.
+- Understand customer segmentation and subscription behaviour.
+- Build an interactive Power BI dashboard.
+- Generate actionable business insights and recommendations.
+
+## 3. Project Workflow
+
+The project was completed through the following stages:
+
+1. **Data Collection:** Obtained the customer shopping dataset.
+2. **Data Cleaning:** Cleaned and transformed the dataset using Python and Pandas.
+3. **Exploratory Data Analysis:** Examined customer and shopping patterns.
+4. **Database Management:** Imported the cleaned dataset into PostgreSQL.
+5. **SQL Analysis:** Solved 10 business questions using SQL queries.
+6. **Data Visualization:** Developed an interactive Power BI dashboard.
+7. **Business Insights:** Interpreted analytical findings and identified business opportunities.
+
+## 4. Data Cleaning and Preparation – Python (Pandas)
+
+Python and Pandas were used to clean, transform, and prepare the raw dataset before performing SQL analysis.
+
+### 4.1 Missing Value Treatment
+
+Identified missing values in the dataset and imputed 37 missing review ratings using the median rating of each product category.
+
+**Purpose:** To maintain data completeness while using category-specific median values.
+
+### 4.2 Column Name Standardization
+
+Converted column names into lowercase snake_case format to maintain consistency and improve readability.
+
+**Purpose:** To establish a standardized naming convention for easier data processing and SQL operations.
+
+### 4.3 Feature Engineering
+
+Created a new `age_group` column to categorize customers into four age groups.
+
+**Purpose:** To support customer segmentation and age-based purchasing analysis.
+
+### 4.4 Data Transformation
+
+Converted purchase frequency categories into numerical day values.
+
+**Purpose:** To make purchase frequency easier to interpret and analyze quantitatively.
+
+### 4.5 Redundant Column Removal
+
+Removed the `promo_code_used` column after confirming that it matched the `discount_applied` column across all records.
+
+**Purpose:** To eliminate redundant information and simplify the dataset.
+
+### 4.6 Data Validation
+
+Verified that no missing values remained after completing the data-cleaning process.
+
+**Purpose:** To ensure the prepared dataset was ready for further analysis.
+
+**Outcome:** The raw dataset was cleaned, standardized, transformed, and prepared for PostgreSQL-based analysis.
+
+## 5. Data Analysis – PostgreSQL (SQL)
+
+PostgreSQL was used to perform structured data analysis and answer 10 important business questions.
+
+### 5.1 Revenue Analysis
+
+Compared the total revenue generated by male and female customers.
+
+**Business Objective:** To understand revenue contribution by gender and identify differences in customer purchasing behaviour.
+
+### 5.2 Discount and Spending Analysis
+
+Identified customers who used discounts but still made purchases with amounts at or above the overall average purchase amount.
+
+**Business Objective:** To understand spending behaviour among discount users.
+
+### 5.3 Product Rating Analysis
+
+Ranked the top five products based on their average customer review ratings.
+
+**Business Objective:** To identify highly rated products and understand customer preferences.
+
+### 5.4 Shipping Analysis
+
+Compared average purchase amounts for Standard and Express shipping.
+
+**Business Objective:** To examine whether purchasing amounts differ according to shipping preferences.
+
+### 5.5 Subscription Analysis
+
+Compared customer counts, average spending, and total revenue between subscribers and non-subscribers.
+
+**Business Objective:** To evaluate the contribution of subscription customers to overall business performance.
+
+### 5.6 Discount Dependency Analysis
+
+Identified the top five products based on the percentage of purchases made with discounts applied.
+
+**Business Objective:** To understand which products have a higher dependence on discounts.
+
+### 5.7 Customer Segmentation
+
+Classified customers into three segments based on previous purchases:
+
+- New Customers
+- Returning Customers
+- Loyal Customers
+
+**Business Objective:** To understand customer purchasing frequency and identify valuable customer segments.
+
+### 5.8 Product Popularity Analysis
+
+Identified the top three most purchased products within each product category.
+
+**Business Objective:** To determine popular products across different categories.
+
+### 5.9 Repeat Buyer Analysis
+
+Compared subscription status among customers who had more than five previous purchases.
+
+**Business Objective:** To investigate the relationship between repeat purchasing and subscription behaviour.
+
+### 5.10 Age Group Revenue Analysis
+
+Compared total revenue across different customer age groups.
+
+**Business Objective:** To identify which age groups contribute more to business revenue.
+
+### SQL Analysis Summary
+
+The 10 business questions provided a structured approach to understanding customer behaviour, revenue distribution, product performance, and purchasing patterns.
+
+**Outcome:** PostgreSQL transformed the cleaned dataset into meaningful business insights through SQL-based analysis.
+
+## 6. Power BI – Interactive Dashboard Development
+
+After completing Python-based data preparation and PostgreSQL analysis, Microsoft Power BI was used to develop an interactive dashboard.
+
+The dashboard provides a consolidated overview of customer shopping behaviour and business performance.
+
+### Key Dashboard Components
+
+- Key Performance Indicators (KPIs)
+- Revenue by Product Category
+- Sales by Age Group
+- Purchase Amount by Gender
+- Top 10 Products by Revenue
+- Customer and purchasing behaviour analysis
+- Interactive Slicers
+- Dashboard Design and Data Visualization
+
+### Dashboard Interactivity
+
+The dashboard includes interactive filters that allow users to explore the data and analyze different customer segments and purchasing patterns.
+
+## 7. Key Business Insights
+
+The project examines important business dimensions, including:
+
+- Customer revenue contribution by gender.
+- Customer subscription behaviour.
+- Product ratings and popularity.
+- Discount dependency across products.
+- Purchasing patterns across age groups.
+- Shipping preferences and spending behaviour.
+- Repeat purchases and customer loyalty.
+
+## 8. Business Recommendations
+
+Based on the analytical objectives and dashboard findings, the following recommendations can support business improvement.
+
+### 1. Grow Subscriptions
+
+Test clear member benefits, such as exclusive offers or early access, and track subscription rate, repeat purchases, and revenue per customer.
+
+### 2. Strengthen Customer Loyalty
+
+Use New, Returning, and Loyal customer segments to tailor follow-ups and rewards. Monitor repeat-purchase rates and time between purchases.
+
+### 3. Optimize Discount Strategy
+
+Identify products frequently bought with discounts, then compare sales and profit to avoid unnecessary markdowns.
+
+### 4. Improve Product Positioning
+
+Promote products that combine strong sales with high ratings and investigate lower-rated products before increasing promotion.
+
+### 5. Refine Targeted Marketing
+
+Use age-group, category, and gender analysis to design campaign tests. Compare conversion, average order value, and profit before shifting marketing budgets.
+
+## 9. Tools and Technologies
+
+| Tool / Technology | Purpose |
 |---|---|
-| Microsoft Power BI | Dashboard development and data visualization |
-| Power Query | Data preparation and transformation |
-| CSV | Dataset storage and input |
-| Data Visualization | Presenting analytical insights |
-| Microsoft Power BI Desktop | Creating and editing the dashboard |
+| Python | Data cleaning and analysis |
+| Pandas | Data manipulation and preparation |
+| PostgreSQL | Database management and SQL analysis |
+| SQL | Business analysis and querying |
+| Microsoft Power BI | Interactive dashboard development |
+| Power Query | Data transformation |
 
-## Dataset Information
+## 10. Project Deliverables
 
-The project uses a customer shopping behavior dataset in CSV format.
+- Python notebook containing data cleaning, transformation, and analysis.
+- PostgreSQL SQL scripts containing 10 business questions.
+- Power BI dashboard in PBIX format.
+- Customer shopping behavior dataset in CSV format.
+- Dashboard demonstration video.
+- Project documentation.
 
-**Dataset Details:**
+## 11. How to Explore This Project
 
-- Total Records: 3,900
-- Total Columns: 18
-- File Format: CSV
-- Data Type: Structured customer shopping data
+1. Clone or download this repository.
+2. Explore the Python folder to review data cleaning and preparation.
+3. Open the SQL folder to examine the 10 business questions and queries.
+4. Open the Power BI folder and launch the PBIX file using Microsoft Power BI Desktop.
+5. Review the dashboard demonstration video.
+6. Explore the dataset and project documentation.
 
-### Dataset Columns
+**Note:** Ensure the dataset file path and PostgreSQL connection are configured correctly before running the respective files.
 
-| Column Name | Description |
-|---|---|
-| Customer ID | Unique customer identifier |
-| Age | Age of the customer |
-| Gender | Customer gender |
-| Item Purchased | Product purchased by the customer |
-| Category | Product category |
-| Purchase Amount (USD) | Amount spent on the purchase |
-| Location | Customer's location |
-| Size | Purchased product size |
-| Color | Product color |
-| Season | Season associated with the purchase |
-| Review Rating | Customer's product review rating |
-| Subscription Status | Indicates whether the customer has a subscription |
-| Shipping Type | Selected shipping method |
-| Discount Applied | Indicates whether a discount was applied |
-| Promo Code Used | Indicates whether a promotional code was used |
-| Previous Purchases | Number of previous purchases |
-| Payment Method | Method used for payment |
-| Frequency of Purchases | Customer's purchase frequency |
+## 12. Conclusion
 
-## Dashboard Features
+The Customer Shopping Behavior Analysis project demonstrates a complete end-to-end data analytics workflow using Python (Pandas), PostgreSQL, and Microsoft Power BI.
 
-The Power BI dashboard includes the following key performance indicators (KPIs):
+Python was used for data cleaning, transformation, feature engineering, and preparation. PostgreSQL was used to answer 10 business questions through structured SQL analysis. Finally, Power BI was used to develop an interactive dashboard that presents key performance indicators, customer distributions, product performance, and revenue insights.
 
-1. **Total Customer** – Displays the total customer count.
-2. **Total Revenue** – Displays the total revenue metric.
-3. **Average Purchase Amount** – Shows the average purchase amount.
-4. **Average Review Rating** – Displays the average customer review rating.
+The project provided practical experience in transforming raw data into meaningful business information and strengthened my understanding of how data analytics can support business decision-making.
 
-### Data Visualizations
+This project represents my practical application of Python, SQL, and Power BI in solving real-world-style business problems and developing data-driven insights.
 
-The dashboard includes multiple visualizations to explore customer shopping behavior:
-
-- Revenue by Product Category – Analyzes revenue across different product categories.
-- Revenue by Age Group – Compares revenue across customer age groups.
-- Revenue by Gender – Shows revenue distribution by gender.
-- Revenue by Item Purchased – Compares revenue across individual products.
-- Subscription Status – Displays the distribution of subscribed and non-subscribed customers.
-
-### Interactive Filters (Slicers)
-
-The dashboard provides interactive filters for:
-
-- Subscription Status
-- Gender
-- Product Category
-- Shipping Type
-- Payment Method
-
-These filters allow users to explore different customer segments and analyze the dashboard according to their selected criteria.
-
-## Project Files
-
-| File | Description |
-|---|---|
-| Customer_shopping_behavior_dashboard.pbix | Complete editable Power BI dashboard |
-| customer_shopping_behavior.csv | Dataset used for analysis |
-| customer_shopping_behavior_dashboard_short.mp4 | Short demonstration video of the dashboard |
-| dashboard_preview.png | Dashboard preview image |
-| README.md | Project documentation |
-
-## How to Use This Project
-
-1. Clone or download this GitHub repository.
-2. Open the `Dashboard` folder.
-3. Download and open `Customer_shopping_behavior_dashboard.pbix` using Microsoft Power BI Desktop.
-4. If required, update the CSV data source path in Power BI.
-5. Refresh the dataset.
-6. Explore the dashboard using the available interactive filters and visualizations.
-
-**Note:** Microsoft Power BI Desktop is required to open and edit the `.pbix` file.
-
-## Key Learning Outcomes
-
-Through this project, I gained practical experience in:
-
-- Working with structured datasets.
-- Understanding customer shopping data.
-- Preparing and organizing data for analysis.
-- Developing interactive Power BI dashboards.
-- Creating KPI cards and visual reports.
-- Analyzing revenue across different dimensions.
-- Using slicers for interactive data exploration.
-- Presenting analytical information through visual storytelling.
-
-## Repository Structure
-
-```text
-Customer-Shopping-Behavior-Analysis/
-│
-├── Dashboard/
-│   └── Customer_shopping_behavior_dashboard.pbix
-│
-├── Dataset/
-│   └── customer_shopping_behavior.csv
-│
-├── Demo/
-│   └── customer_shopping_behavior_dashboard_short.mp4
-│
-├── Screenshots/
-│   └── dashboard_preview.png
-│
-└── README.md
-```
-
-## Disclaimer
-
-This project is created for educational, learning, and portfolio purposes.
-
-The dataset is used for practicing data analysis and visualization. The dashboard's metrics and visualizations should not be interpreted as verified financial results or actual business performance.
+---
 
 ## Author
 
 **Noor Mohammad**
 
-Aspiring Data Analyst | Power BI | Excel | SQL | Data Visualization
+Data Analytics | Python | PostgreSQL | Power BI | Excel
 
+**LinkedIn:** [Connect with me](https://www.linkedin.com/in/noor-mohammad-609536393/)
 
-LinkedIn: [Connect with me on LinkedIn](https://www.linkedin.com/in/noor-mohammad-609536393/)
+**GitHub:** [Visit my GitHub Profile](https://github.com/)
 
 ---
 
-**Thank you for visiting this repository!**
-
-If you find this project useful, feel free to explore the dashboard and share your feedback.
+*Thank you for visiting this repository!*
